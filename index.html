@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0b16">
+<meta name="description" content="YumeCore — una asistente moderna, elegante y configurable para la gestión de tickets en Discord. Beyond Support.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YumeCore — Beyond Support">
+<meta property="og:description" content="Una experiencia de soporte más clara, organizada y personalizable para Discord.">
+<title>YumeCore — Beyond Support</title>
+<link rel="icon" type="image/svg+xml" href="assets/yumecore-mark.svg">
+<style>
+:root{color-scheme:dark;--bg:#0d0b16;--panel:#171326;--text:#f7f4ff;--muted:#b9b2ca;--violet:#8b5cf6;--lav:#c4b5fd;--amber:#f59e0b;--mint:#34d399;--line:#c4b5fd24;--max:1080px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#8b5cf62c,transparent 43%),var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.wrap{width:min(calc(100% - 36px),var(--max));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:850;font-size:1.1rem}.mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#5b21b6);display:grid;place-items:center;box-shadow:0 8px 30px #8b5cf633}.nav{display:flex;gap:22px;flex-wrap:wrap}.nav a{color:var(--muted);text-decoration:none;font-size:.92rem}.nav a:hover{color:white}.hero{padding:92px 0 72px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}.eyebrow,.kicker{color:var(--lav);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint)}h1{font-size:clamp(3.4rem,9vw,6.4rem);line-height:.96;letter-spacing:-.065em;margin:20px 0}h1 span{background:linear-gradient(100deg,#ddd6fe,#a78bfa,#c4b5fd);background-clip:text;color:transparent}.lead{font-size:clamp(1.08rem,2vw,1.28rem);color:var(--muted);max-width:650px}.tagline{margin-top:24px;font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:750}.primary{background:var(--violet);border-color:var(--violet)}.secondary{background:#ffffff06}.art{min-height:300px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#21183a,#11101a 75%);display:grid;place-items:center;position:relative;overflow:hidden}.orb{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 32% 27%,#ede9fe,#a78bfa 24%,#7c3aed 56%,#2e1065 78%);box-shadow:0 0 70px #8b5cf655,inset -18px -20px 36px #1c0c3b}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #c4b5fd55;border-radius:50%;inset:-28px;transform:rotate(-32deg) scaleY(.42)}.orb:after{inset:-49px;transform:rotate(55deg) scaleY(.35)}.float{position:absolute;padding:8px 12px;border-radius:10px;background:#171326dd;border:1px solid var(--line);font-size:.8rem;font-weight:700}.one{top:24px;left:20px}.two{right:18px;bottom:30px;color:var(--mint)}section.content{padding:62px 0}.head{max-width:670px;margin-bottom:28px}h2{font-size:clamp(2rem,4vw,3rem);line-height:1.13;letter-spacing:-.04em;margin:10px 0 14px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:23px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(150deg,#1c1730,var(--panel))}.symbol{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#8b5cf622;color:var(--lav);font-size:1.25rem;margin-bottom:16px}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted);font-size:.94rem}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{padding:26px;border:1px solid var(--line);border-radius:20px;background:#ffffff04}.panel p{color:var(--muted)}.cta{padding:clamp(26px,5vw,48px);border:1px solid #a78bfa44;border-radius:24px;background:radial-gradient(ellipse at 90% 0%,#8b5cf62c,transparent 55%),var(--panel)}.footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.footer a{text-decoration:none;color:var(--lav)}@media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0 42px;gap:30px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.art{min-height:245px}}@media(max-width:500px){.top{align-items:flex-start;flex-direction:column}.nav{gap:14px}.grid{grid-template-columns:1fr}.wrap{width:min(calc(100% - 28px),var(--max))}.hero{padding-top:46px}.orb{width:140px;height:140px}.content{padding:46px 0!important}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="#inicio"><span class="mark">✦</span><span>YumeCore</span></a>
+<nav class="nav" aria-label="Navegación principal"><a href="#funciones">Funciones</a><a href="#experiencia">Experiencia</a><a href="#acerca">Acerca de</a></nav>
+</header>
+<main>
+<section class="wrap hero" id="inicio">
+<div><div class="eyebrow"><span class="dot"></span> Soporte para Discord</div>
+<h1>Beyond<br><span>Support.</span></h1>
+<p class="lead"><strong>YumeCore</strong> es una asistente de gestión de tickets para Discord, diseñada para ayudar a las comunidades a organizar sus solicitudes con una experiencia moderna, clara y personalizable.</p>
+<div class="tagline">Una nueva generación de soporte.</div>
+<div class="actions"><a class="btn primary" href="#funciones">Descubrir funciones ↓</a><a class="btn secondary" id="invite" hidden href="#" target="_blank" rel="noopener noreferrer">Conocer YumeCore ↗</a></div>
+</div>
+<div class="art" role="img" aria-label="Ilustración abstracta en tonos violetas"><span class="float one">✦ Atención organizada</span><div class="orb"></div><span class="float two">● Hecha para comunidades</span></div>
+</section>
+<section class="wrap content" id="funciones">
+<div class="head"><div class="kicker">Diseñada para comunidades</div><h2>El soporte que tu comunidad merece.</h2><p class="muted">Herramientas pensadas para que cada solicitud tenga su lugar y los equipos puedan atender con claridad.</p></div>
+<div class="grid">
+<article class="card"><div class="symbol">▦</div><h3>Paneles personalizables</h3><p>Adapta la presentación del sistema a la identidad y necesidades de tu comunidad.</p></article>
+<article class="card"><div class="symbol">☷</div><h3>Solicitudes organizadas</h3><p>Clasifica las solicitudes y facilita que cada una llegue al equipo adecuado.</p></article>
+<article class="card"><div class="symbol">◇</div><h3>Formularios claros</h3><p>Recopila desde el inicio la información necesaria para ofrecer una mejor atención.</p></article>
+<article class="card"><div class="symbol">↗</div><h3>Trabajo en equipo</h3><p>Facilita la coordinación del equipo y el seguimiento de cada solicitud.</p></article>
+<article class="card"><div class="symbol">◷</div><h3>Flujos flexibles</h3><p>Organiza el ciclo de atención para ajustarlo a la manera de trabajar de tu servidor.</p></article>
+<article class="card"><div class="symbol">✧</div><h3>Identidad propia</h3><p>Una interfaz elegante y opciones de personalización para mantener tu estilo.</p></article>
+</div>
+</section>
+<section class="wrap content" id="experiencia">
+<div class="head"><div class="kicker">Simple y flexible</div><h2>Creada para adaptarse a ti.</h2><p class="muted">Cada comunidad tiene una forma distinta de atender. YumeCore busca que organizar el soporte sea una tarea más sencilla, sin complicar la experiencia de los miembros.</p></div>
+<div class="split">
+<div class="panel"><h3>Para quienes administran</h3><p>Una experiencia configurable que ayuda a mantener las solicitudes ordenadas, distribuir la atención y dar seguimiento al trabajo del equipo.</p></div>
+<div class="panel"><h3>Para quienes necesitan ayuda</h3><p>Un camino más claro para enviar una solicitud, explicar lo que necesitan y recibir atención dentro de su comunidad.</p></div>
+</div>
+</section>
+<section class="wrap content" id="acerca">
+<div class="cta"><div class="kicker">YumeCore · Beyond Support.</div><h2>Más orden para las comunidades. Una mejor experiencia para todos.</h2><p class="muted">YumeCore es un proyecto independiente creado con el objetivo de ofrecer una experiencia de soporte moderna, elegante y adaptable para Discord.</p><div class="actions"><a class="btn secondary" href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord ↗</a></div></div>
+</section>
+</main>
+<footer class="wrap footer"><span><strong>YumeCore</strong> · Beyond Support.</span><span>Una asistente de gestión para Discord.</span></footer>
+<script src="site-config.js"></script>
+<script>
+(() => {
+ const url = window.YUMECORE_SITE?.publicInfoUrl;
+ const el = document.getElementById("invite");
+ if (typeof url === "string" && /^https:\/\//i.test(url)) { el.href = url; el.hidden = false; }
+})();
+</script>
+</body>
+</html>
