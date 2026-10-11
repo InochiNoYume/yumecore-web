@@ -1,11 +1,19 @@
 # YumeCore — Beyond Support
 
-Sitio web oficial de presentación de YumeCore.
+Sitio público de presentación de YumeCore, una herramienta independiente de soporte para comunidades de Discord.
 
-Este repositorio contiene únicamente los archivos públicos necesarios para mostrar la página web. No contiene el código interno del bot ni credenciales.
+## Enlaces públicos
+- Sitio web: https://inochinoyume.github.io/yumecore-web/
+- Servidor de soporte: https://discord.gg/7QTeThJvrV
+- Invitar el bot: https://discord.com/oauth2/authorize?client_id=1549554629853843596
+- Términos de servicio: https://inochinoyume.github.io/yumecore-web/terms.html
+- Política de privacidad: https://inochinoyume.github.io/yumecore-web/privacy.html
 
-## Sitio
+## Publicación
+El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**.
 
-La página se publica mediante GitHub Pages cuando el despliegue queda habilitado.
+## Seguridad
+Este repositorio contiene únicamente los archivos públicos del sitio web. No contiene el código interno del bot ni credenciales. Nunca añadas tokens, claves API, secretos ni detalles privados de la infraestructura.
 
-**YumeCore** — una asistente moderna y configurable para la gestión de tickets en Discord.
+## Documentos legales
+Los documentos incluidos son una base informativa y deben verificarse frente al funcionamiento real del bot, los proveedores, los plazos de conservación y las obligaciones legales aplicables antes de considerarse documentación legal definitiva.
