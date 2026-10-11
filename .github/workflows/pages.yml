@@ -20,10 +20,96 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Validate static website
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse, unquote
+          import sys
+
+          root = Path(".")
+          pages = sorted(root.glob("*.html"))
+          errors = []
+
+          class Audit(HTMLParser):
+              def __init__(self, path):
+                  super().__init__(convert_charrefs=True)
+                  self.path = path
+                  self.ids = set()
+                  self.fragments = []
+                  self.links = []
+                  self.images_without_alt = 0
+                  self.titles = 0
+                  self.lang_seen = False
+                  self.h1_count = 0
+                  self.in_title = False
+                  self.title_text = []
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "html" and attrs.get("lang"):
+                      self.lang_seen = True
+                  if attrs.get("id"):
+                      self.ids.add(attrs["id"])
+                  if tag == "h1":
+                      self.h1_count += 1
+                  if tag == "title":
+                      self.titles += 1
+                      self.in_title = True
+                  if tag == "img" and "alt" not in attrs:
+                      self.images_without_alt += 1
+                  for attr in ("href", "src"):
+                      value = attrs.get(attr)
+                      if value:
+                          self.links.append(value)
+
+              def handle_endtag(self, tag):
+                  if tag == "title":
+                      self.in_title = False
+
+          for page in pages:
+              parser = Audit(page)
+              parser.feed(page.read_text(encoding="utf-8"))
+              if not parser.lang_seen:
+                  errors.append(f"{page}: falta lang en <html>")
+              if parser.titles != 1:
+                  errors.append(f"{page}: se esperaba un único <title>, hay {parser.titles}")
+              if parser.h1_count != 1:
+                  errors.append(f"{page}: se esperaba un único <h1>, hay {parser.h1_count}")
+              if parser.images_without_alt:
+                  errors.append(f"{page}: {parser.images_without_alt} imagen(es) sin atributo alt")
+              for value in parser.links:
+                  parsed = urlparse(value)
+                  if parsed.scheme or parsed.netloc or value.startswith(("data:", "mailto:", "tel:", "javascript:")):
+                      continue
+                  target_path = unquote(parsed.path)
+                  if not target_path:
+                      continue
+                  target = (page.parent / target_path).resolve()
+                  if not target.exists():
+                      errors.append(f"{page}: enlace/recurso local roto: {value}")
+              source = page.read_text(encoding="utf-8")
+              for anchor in __import__("re").findall(r'href="#([^"]+)"', source):
+                  if anchor not in parser.ids:
+                      errors.append(f"{page}: ancla interna inexistente: #{anchor}")
+
+          for required in ("index.html", "terms.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "123c7a37ea32e786c418e59e43da6a87.jpg"):
+              if not (root / required).exists():
+                  errors.append(f"falta archivo requerido: {required}")
+
+          if errors:
+              print("\n".join(f"ERROR: {error}" for error in errors))
+              sys.exit(1)
+          print(f"Validación correcta: {len(pages)} páginas HTML y todos los enlaces/recursos locales existen.")
+          PY
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
   deploy:
     environment:
       name: github-pages
