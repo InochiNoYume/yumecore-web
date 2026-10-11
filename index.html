@@ -40,6 +40,12 @@
     .nav a,.footer-links a{color:var(--muted);text-decoration:none;font-size:.91rem;transition:color .2s}
     .nav a:hover,.footer-links a:hover{color:var(--text)}
     .nav .nav-cta{padding:9px 14px;border-radius:10px;background:#8b5cf6;color:white;font-weight:750}
+    .menu-toggle{display:none;align-items:center;justify-content:center;gap:3px;flex-direction:column;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:12px;background:#171426;color:var(--text);cursor:pointer}
+    .menu-toggle span{display:block;width:19px;height:2px;border-radius:2px;background:currentColor;transition:transform .18s,opacity .18s}
+    .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(5px) rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-5px) rotate(-45deg)}
+    .menu-toggle:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
     .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);align-items:center;gap:clamp(36px,7vw,86px);padding:clamp(76px,10vw,126px) 0 88px}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--purple);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
     .eyebrow:before{content:"";width:20px;height:1px;background:currentColor}
@@ -110,7 +116,7 @@
     .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:#918ba4;font-size:.78rem}
     .footer-bottom p{margin:0;max-width:780px}
     @media(max-width:850px){.hero{grid-template-columns:1fr;gap:45px;padding-top:75px}.hero-copy{max-width:760px}.visual{max-width:620px;width:100%;margin:auto}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{gap:13px}.nav a{font-size:.85rem}}
-    @media(max-width:580px){.wrap{width:min(calc(100% - 30px),var(--max))}.top-inner{align-items:flex-start;flex-direction:column;gap:12px;padding:14px 0}.nav{width:100%;justify-content:flex-start;gap:10px 15px}.nav .nav-cta{padding:6px 10px}.hero{padding:56px 0 60px;gap:35px}h1{font-size:clamp(3rem,15vw,4.6rem)}.dashboard{transform:none;border-radius:19px}.dash-content{padding:18px}.ticket{padding:11px;gap:10px}.ticket-icon{width:35px;height:35px;flex-basis:35px}.available{display:none}.trust-inner{justify-content:flex-start;gap:12px 22px}.feature-grid,.split,.steps{grid-template-columns:1fr}.feature{min-height:0;padding:22px}.section{padding:62px 0}.section-head{margin-bottom:25px}.footer-main{flex-direction:column}.footer-links{gap:13px}.footer-bottom{flex-direction:column}}
+    @media(max-width:580px){.wrap{width:min(calc(100% - 30px),var(--max))}.top-inner{position:relative;min-height:72px;align-items:center;flex-direction:row;gap:12px;padding:12px 0}.brand-logo{width:38px;height:38px}.menu-toggle{display:flex;flex-shrink:0}.nav{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;width:100%;padding:12px;border:1px solid #ffffff20;border-radius:16px;background:#12101df7;box-shadow:0 18px 45px #0008;backdrop-filter:blur(18px);align-items:stretch;flex-direction:column;justify-content:flex-start;gap:3px}.nav.is-open{display:flex}.nav a{display:flex;align-items:center;min-height:44px;padding:10px 12px;border-radius:10px;font-size:.95rem}.nav a:hover{background:#ffffff0a}.nav .nav-cta{justify-content:center;margin-top:5px;padding:11px 12px}.hero{padding:56px 0 60px;gap:35px}h1{font-size:clamp(3rem,15vw,4.6rem)}.dashboard{transform:none;border-radius:19px}.dash-content{padding:18px}.ticket{padding:11px;gap:10px}.ticket-icon{width:35px;height:35px;flex-basis:35px}.available{display:none}.trust-inner{justify-content:flex-start;gap:12px 22px}.feature-grid,.split,.steps{grid-template-columns:1fr}.feature{min-height:0;padding:22px}.section{padding:62px 0}.section-head{margin-bottom:25px}.footer-main{flex-direction:column}.footer-links{gap:13px}.footer-bottom{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YumeCore","applicationCategory":"CommunicationApplication","description":"Herramienta de soporte para organizar tickets y solicitudes en comunidades de Discord.","url":"https://inochinoyume.github.io/yumecore-web/","image":"https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg"}</script>
@@ -120,7 +126,8 @@
   <header class="top">
     <div class="wrap top-inner">
       <a class="brand" href="#inicio" aria-label="YumeCore, inicio"><img class="brand-logo" src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40"><span>YumeCore</span></a>
-      <nav class="nav" aria-label="Navegación principal">
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" id="primary-navigation" aria-label="Navegación principal">
         <a href="#funciones">Funciones</a><a href="#como-funciona">Cómo funciona</a><a href="#preguntas">Preguntas frecuentes</a><a href="terms.html">Términos</a><a href="privacy.html">Privacidad</a>
         <a class="nav-cta" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir bot <span aria-hidden="true">↗</span></a>
       </nav>
@@ -199,5 +206,26 @@
       <div class="footer-bottom"><p>YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc. Discord es una marca de sus respectivos propietarios.</p><span>© 2026 YumeCore · Beyond Support</span></div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#primary-navigation");
+      if (!toggle || !navigation) return;
+      const closeMenu = () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Abrir menú de navegación");
+        navigation.classList.remove("is-open");
+      };
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        toggle.setAttribute("aria-label", isOpen ? "Abrir menú de navegación" : "Cerrar menú de navegación");
+        navigation.classList.toggle("is-open", !isOpen);
+      });
+      navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeMenu(); toggle.focus(); } });
+      window.addEventListener("resize", () => { if (window.matchMedia("(min-width: 581px)").matches) closeMenu(); });
+    })();
+  </script>
 </body>
 </html>
