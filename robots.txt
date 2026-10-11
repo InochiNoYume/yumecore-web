@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inochinoyume.github.io/yumecore-web/sitemap.xml
