@@ -4,6 +4,12 @@
 
 Este archivo mantiene el contexto operativo del sitio público para que otro desarrollador o una nueva sesión pueda continuar sin reconstruir todo el historial.
 
+## Registro de continuidad
+
+- `PROJECT-HISTORY.md` contiene el historial de implementaciones, cambios, errores, correcciones, elementos retirados y decisiones de continuidad.
+- Antes de continuar una tarea, revisar este archivo, `PROJECT-HISTORY.md` y el estado de CI.
+- Después de una modificación relevante, actualizar el estado y el historial con el resultado real de la verificación.
+
 ## Estado actual
 
 - Repositorio público: `InochiNoYume/yumecore-web`.
@@ -59,7 +65,7 @@ El workflow falló en el commit que añadió `features.html` porque el validador
 
 El problema era de orden de publicación: `features.html` ya enlazaba al tutorial, pero `tutorial.html` todavía no existía en ese commit.
 
-Después se añadió `tutorial.html` y las ejecuciones posteriores del workflow quedaron en verde. El fallo histórico se conserva como contexto y no como bloqueo actual.
+Después se añadió `tutorial.html` y se mantuvo la comprobación de enlaces locales. El fallo histórico se conserva como contexto en `PROJECT-HISTORY.md`; el estado actual debe comprobarse en la ejecución más reciente de Actions.
 
 ## Cambios recientes
 
@@ -67,7 +73,7 @@ Después se añadió `tutorial.html` y las ejecuciones posteriores del workflow 
 - Se publicó la invitación permanente oficial en la página de soporte.
 - Se hizo que `support.html` tome la URL canónica desde `site-config.js`, manteniendo un fallback visible en HTML.
 - README actualizado con enlaces oficiales, política actual y continuidad del proyecto.
-- Se añadió este registro de estado para facilitar la continuidad.
+- Se añadió `PROJECT-HISTORY.md` para conservar el historial de trabajo y facilitar la continuidad.
 
 ## Elementos retirados o que no deben volver
 
