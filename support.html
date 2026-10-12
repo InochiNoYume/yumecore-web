@@ -17,12 +17,23 @@
     <span class="eyebrow">YumeCore · Beyond Support</span>
     <h1>Soporte oficial.</h1>
     <p>Este es el servidor oficial de soporte de YumeCore. La invitación publicada aquí es la invitación permanente y canónica del proyecto, la misma que utiliza el bot en sus mensajes de bienvenida.</p>
-    <div class="invite" aria-label="Invitación oficial de soporte">https://discord.gg/7QTeThJvrV</div>
+    <div class="invite" id="support-invite" aria-label="Invitación oficial de soporte">https://discord.gg/7QTeThJvrV</div>
     <div class="actions">
-      <a class="btn primary" href="https://discord.gg/7QTeThJvrV" target="_blank" rel="noopener noreferrer">Entrar al servidor de soporte ↗</a>
+      <a class="btn primary" id="support-invite-link" href="https://discord.gg/7QTeThJvrV" target="_blank" rel="noopener noreferrer">Entrar al servidor de soporte ↗</a>
       <a class="btn" href="index.html">Volver al sitio</a>
     </div>
     <p class="back">Si el enlace no abre desde una aplicación concreta, copia la dirección mostrada arriba y ábrela directamente en Discord.</p>
   </main>
+  <script src="site-config.js"></script>
+  <script>
+    (() => {
+      const url = window.YUMECORE_SITE?.supportServerUrl;
+      if (!url) return;
+      const invite = document.getElementById("support-invite");
+      const link = document.getElementById("support-invite-link");
+      if (invite) invite.textContent = url;
+      if (link) link.href = url;
+    })();
+  </script>
 </body>
 </html>
