@@ -11,7 +11,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
-> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL se usa en `SUPPORT_SERVER_URL` del bot, en el mensaje de bienvenida y en la página de soporte.
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL se usa en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
 
 ## Política pública actual
 
@@ -50,13 +50,20 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 ## Publicación y CI
 
-El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**. Las actualizaciones se validan antes de publicar.
+El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**. Las pull requests se validan sin publicar; los cambios aceptados en `main` pueden desplegarse.
 
-Se conserva el historial de ejecuciones de CI. Un fallo reciente del validador ocurrió cuando `features.html` apuntaba a `tutorial.html` antes de que esa página existiera en el mismo commit. La página fue incorporada posteriormente y las ejecuciones posteriores quedaron en verde.
+### Incidencias de CI conocidas
+
+- Hubo un fallo histórico cuando `features.html` apuntaba a `tutorial.html` antes de que esa página existiera en el commit validado. El validador detectó correctamente el enlace local roto.
+- La corrección fue añadir `tutorial.html` y conservar la comprobación automática de enlaces locales.
+- Ese fallo se conserva como antecedente en `PROJECT-HISTORY.md`; no debe tratarse como bloqueo actual si las ejecuciones posteriores están verdes.
 
 ## Continuidad del proyecto
 
-El estado técnico, los cambios relevantes, errores encontrados, correcciones, elementos retirados, verificaciones y próximos pasos se mantienen en [`PROJECT-STATE.md`](PROJECT-STATE.md). Es la referencia rápida para que otro desarrollador o una nueva sesión pueda continuar desde el punto correcto.
+- [`PROJECT-STATE.md`](PROJECT-STATE.md): estado actual, verificaciones y próximo punto de continuación.
+- [`PROJECT-HISTORY.md`](PROJECT-HISTORY.md): historial de implementaciones, cambios, errores, correcciones, elementos retirados y decisiones que no deben revertirse accidentalmente.
+
+Antes de cambiar el sitio, revisa ambos archivos y el estado de CI. Si cambia el comportamiento público del bot, sincroniza este repositorio con él.
 
 ## Seguridad y privacidad
 
