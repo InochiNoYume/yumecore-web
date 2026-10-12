@@ -11,7 +11,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
-> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL se usa en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La invitación ha sido confirmada como activa y permanente por el propietario del proyecto. La misma URL se usa en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
 
 ## Política pública actual
 
