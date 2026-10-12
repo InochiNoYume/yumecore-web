@@ -1,4 +1,6 @@
-/* Solo enlaces públicos. Nunca añadas tokens, claves ni información privada. */
+/* Enlaces y datos públicos compartidos por las páginas. Nunca añadas tokens, claves ni información privada. */
 window.YUMECORE_SITE = {
-  publicInfoUrl: ""
+  publicInfoUrl: "",
+  supportServerUrl: "https://discord.gg/7QTeThJvrV",
+  ticketRetentionDays: 90
 };
