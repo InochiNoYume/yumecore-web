@@ -54,8 +54,6 @@ El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pa
 
 Se conserva el historial de ejecuciones de CI. Un fallo reciente del validador ocurrió cuando `features.html` apuntaba a `tutorial.html` antes de que esa página existiera en el mismo commit. La página fue incorporada posteriormente y las ejecuciones posteriores quedaron en verde.
 
-GitHub Actions permite revisar los logs de cada job cuando una validación falla; por eso los errores históricos se mantienen como contexto, no como estado actual del sitio. citeturn0search4
-
 ## Continuidad del proyecto
 
 El estado técnico, los cambios relevantes, errores encontrados, correcciones, elementos retirados, verificaciones y próximos pasos se mantienen en [`PROJECT-STATE.md`](PROJECT-STATE.md). Es la referencia rápida para que otro desarrollador o una nueva sesión pueda continuar desde el punto correcto.
