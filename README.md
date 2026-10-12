@@ -6,12 +6,19 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 - **Sitio web:** https://inochinoyume.github.io/yumecore-web/
 - **Añadir el bot:** https://discord.com/oauth2/authorize?client_id=1549554629853843596
-- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación permanente oficial.
+- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación activa y permanente.
 - **Página de soporte:** https://inochinoyume.github.io/yumecore-web/support.html
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
-> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. Debe mantenerse igual en la web pública y en `SUPPORT_SERVER_URL` del bot.
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL se usa en `SUPPORT_SERVER_URL` del bot, en el mensaje de bienvenida y en la página de soporte.
+
+## Política pública actual
+
+- Retención de tickets cerrados: **90 días**.
+- La política se refleja en `site-config.js` y debe mantenerse alineada con `TICKET_RETENTION_DAYS=90` del bot.
+- Cuando el bot abandona una guild confirmada, sus datos y recursos asociados se eliminan de forma aislada. Una indisponibilidad temporal de Discord no se trata como expulsión.
+- Las transcripciones privadas se almacenan en Supabase; las copias publicadas en Discord dependen de los permisos del canal configurado.
 
 ## Funciones destacadas
 
@@ -31,16 +38,27 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 - `index.html`: página principal, funciones, guía conceptual y preguntas frecuentes.
 - `support.html`: acceso oficial al servidor permanente de soporte.
+- `features.html`: funciones principales del producto.
+- `tutorial.html`: guía pública de configuración y puesta en marcha.
 - `terms.html`: términos de servicio.
 - `privacy.html`: política de privacidad.
 - `404.html`: página de error personalizada.
+- `site-config.js`: valores públicos compartidos, incluida la invitación canónica y la política pública de retención.
 - `robots.txt` y `sitemap.xml`: directivas de rastreo y mapa de páginas.
 - `123c7a37ea32e786c418e59e43da6a87.jpg`: imagen de marca usada en el sitio y como favicon.
 - `.github/workflows/pages.yml`: validación de estructura, accesibilidad básica, enlaces locales y publicación mediante GitHub Pages.
 
-## Publicación
+## Publicación y CI
 
 El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**. Las actualizaciones se validan antes de publicar.
+
+Se conserva el historial de ejecuciones de CI. Un fallo reciente del validador ocurrió cuando `features.html` apuntaba a `tutorial.html` antes de que esa página existiera en el mismo commit. La página fue incorporada posteriormente y las ejecuciones posteriores quedaron en verde.
+
+GitHub Actions permite revisar los logs de cada job cuando una validación falla; por eso los errores históricos se mantienen como contexto, no como estado actual del sitio. citeturn0search4
+
+## Continuidad del proyecto
+
+El estado técnico, los cambios relevantes, errores encontrados, correcciones, elementos retirados, verificaciones y próximos pasos se mantienen en [`PROJECT-STATE.md`](PROJECT-STATE.md). Es la referencia rápida para que otro desarrollador o una nueva sesión pueda continuar desde el punto correcto.
 
 ## Seguridad y privacidad
 
