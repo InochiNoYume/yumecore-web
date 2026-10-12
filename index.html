@@ -1,231 +1,54 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0913">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="YumeCore ayuda a las comunidades de Discord a organizar tickets y solicitudes con una experiencia clara, flexible y moderna.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://inochinoyume.github.io/yumecore-web/">
-  <link rel="icon" type="image/jpeg" href="123c7a37ea32e786c418e59e43da6a87.jpg">
-  <link rel="apple-touch-icon" href="123c7a37ea32e786c418e59e43da6a87.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_CL">
-  <meta property="og:site_name" content="YumeCore">
-  <meta property="og:title" content="YumeCore — Beyond Support">
-  <meta property="og:description" content="Una experiencia de soporte más clara y organizada para comunidades de Discord.">
-  <meta property="og:url" content="https://inochinoyume.github.io/yumecore-web/">
-  <meta property="og:image" content="https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="YumeCore — Beyond Support">
-  <meta name="twitter:description" content="Organiza tickets y solicitudes en tu comunidad de Discord.">
-  <meta name="twitter:image" content="https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg">
-  <title>YumeCore — Beyond Support | Soporte para Discord</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b0913;--surface:#12101d;--surface-2:#171426;--text:#f8f7ff;--muted:#b9b4ca;--purple:#c4b5fd;--purple-strong:#8b5cf6;--line:#ffffff16;--green:#86efac;--max:1120px}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:100px}
-    body{margin:0;background:radial-gradient(ellipse at 78% -10%,#7c3aed30,transparent 42%),radial-gradient(ellipse at 0% 42%,#4c1d9514,transparent 38%),var(--bg);color:var(--text);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    a:focus-visible,summary:focus-visible{outline:3px solid var(--purple);outline-offset:4px;border-radius:5px}
-    img{max-width:100%;height:auto}
-    .wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-    .skip{position:absolute;left:12px;top:-60px;z-index:20;padding:10px 14px;background:#fff;color:#111;border-radius:8px}.skip:focus{top:12px}
-    .top{position:sticky;top:0;z-index:10;background:#0b0913d9;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .top-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.035em;font-size:1.12rem;white-space:nowrap}
-    .brand-logo{width:40px;height:40px;object-fit:cover;border-radius:13px;border:1px solid #ffffff22;box-shadow:0 5px 20px #0004}
-    .nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,2vw,25px);flex-wrap:wrap}
-    .nav a,.footer-links a{color:var(--muted);text-decoration:none;font-size:.91rem;transition:color .2s}
-    .nav a:hover,.footer-links a:hover{color:var(--text)}
-    .nav .nav-cta{padding:9px 14px;border-radius:10px;background:#8b5cf6;color:white;font-weight:750}
-    .menu-toggle{display:none;align-items:center;justify-content:center;gap:3px;flex-direction:column;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:12px;background:#171426;color:var(--text);cursor:pointer}
-    .menu-toggle span{display:block;width:19px;height:2px;border-radius:2px;background:currentColor;transition:transform .18s,opacity .18s}
-    .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(5px) rotate(45deg)}
-    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-    .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-5px) rotate(-45deg)}
-    .menu-toggle:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
-    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);align-items:center;gap:clamp(36px,7vw,86px);padding:clamp(76px,10vw,126px) 0 88px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--purple);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:20px;height:1px;background:currentColor}
-    .tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #c4b5fd30;background:#a78bfa0d;border-radius:999px;padding:7px 12px;color:#ddd6fe;font-size:.82rem;font-weight:650}
-    .tag-dot{width:7px;height:7px;border-radius:50%;background:#a78bfa;box-shadow:0 0 12px #a78bfa80}
-    h1{font-size:clamp(3.25rem,7.3vw,6.3rem);line-height:.97;letter-spacing:-.078em;margin:24px 0 22px;font-weight:850}
-    .gradient{background:linear-gradient(100deg,#fff 5%,#d8ccff 58%,#a78bfa);background-clip:text;-webkit-background-clip:text;color:transparent}
-    .lead{max-width:610px;font-size:clamp(1.04rem,1.8vw,1.2rem);line-height:1.8;color:var(--muted);margin:0}
-    .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:30px 0 18px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 17px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-size:.94rem;font-weight:750;transition:transform .18s,border-color .18s,background .18s}
-    .btn:hover{transform:translateY(-2px);border-color:#c4b5fd65}
-    .btn-primary{background:linear-gradient(135deg,#8b5cf6,#6d28d9);border-color:transparent;color:white;box-shadow:0 9px 28px #6d28d933}
-    .btn-primary:hover{background:linear-gradient(135deg,#9a70ff,#7c3aed)}
-    .btn-arrow{font-size:1.08em}
-    .microcopy{color:#918ba6;font-size:.84rem;margin:0}
-    .microcopy a{color:#d5cdf0;text-underline-offset:3px}
-    .visual{position:relative;isolation:isolate}
-    .visual:before{content:"";position:absolute;inset:12% -7% -8% 12%;z-index:-1;background:#7c3aed2b;filter:blur(60px);border-radius:50%}
-    .dashboard{overflow:hidden;border:1px solid #ffffff20;border-radius:24px;background:linear-gradient(145deg,#1c192b,#100e19 76%);box-shadow:0 34px 100px #0007,0 1px #ffffff0a inset;transform:rotate(1deg)}
-    .dash-head{display:flex;align-items:center;justify-content:space-between;padding:17px 19px;border-bottom:1px solid var(--line);background:#ffffff03}
-    .dash-brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:.9rem}
-    .dash-brand img{width:28px;height:28px;object-fit:cover;border-radius:9px}
-    .window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#ffffff30}
-    .dash-content{padding:24px}
-    .dash-kicker{color:#aaa2c0;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:750}
-    .dash-title{font-size:1.45rem;line-height:1.25;letter-spacing:-.04em;margin:7px 0 6px}
-    .dash-sub{color:var(--muted);font-size:.86rem;margin:0 0 22px}
-    .ticket{display:flex;align-items:center;gap:13px;padding:14px;border:1px solid var(--line);background:#ffffff04;border-radius:14px;margin-top:10px}
-    .ticket-icon{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border-radius:12px;background:#8b5cf61e;color:#d7caff;font-size:1.1rem}
-    .ticket-copy{min-width:0;flex:1}.ticket-copy strong{display:block;font-size:.88rem}.ticket-copy small{display:block;color:#a7a0b9;font-size:.77rem;margin-top:2px}
-    .available{font-size:.7rem;color:var(--green);border:1px solid #86efac30;background:#86efac0b;border-radius:999px;padding:4px 7px;white-space:nowrap}
-    .dash-foot{display:flex;align-items:center;gap:9px;border-top:1px solid var(--line);padding:15px 20px;color:#aaa2bb;font-size:.78rem}
-    .dash-foot span{width:7px;height:7px;border-radius:50%;background:var(--green)}
-    .trust{border-block:1px solid var(--line);background:#ffffff02}
-    .trust-inner{display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,46px);flex-wrap:wrap;padding:22px 0;color:#c1bbd2;font-size:.86rem}
-    .trust-item{display:flex;align-items:center;gap:9px}.trust-symbol{color:var(--purple);font-size:1.05rem}
-    .section{padding:clamp(68px,8vw,102px) 0}
-    .section-head{max-width:720px;margin-bottom:34px}
-    .section h2{font-size:clamp(2.1rem,4.7vw,3.7rem);line-height:1.08;letter-spacing:-.065em;margin:14px 0 15px}
-    .section-intro{max-width:670px;color:var(--muted);margin:0;font-size:1.03rem}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-    .feature{padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#171426b8,#11101a9c);min-height:190px}
-    .feature-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;border:1px solid #c4b5fd28;background:#a78bfa0e;color:#d5c9ff;font-size:1.1rem;margin-bottom:20px}
-    .feature h3{font-size:1.02rem;letter-spacing:-.02em;margin:0 0 8px}
-    .feature p{font-size:.91rem;color:var(--muted);margin:0}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .audience{border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,36px);background:linear-gradient(145deg,#181528,#11101a)}
-    .audience-label{color:var(--purple);font-size:.77rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-    .audience h3{font-size:1.55rem;letter-spacing:-.04em;margin:10px 0}
-    .audience p{color:var(--muted);margin:0}
-    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:step}
-    .step{border-top:1px solid #c4b5fd40;padding-top:18px;counter-increment:step}
-    .step:before{content:"0" counter(step);color:var(--purple);font-size:.78rem;font-weight:850;letter-spacing:.12em}
-    .step h3{font-size:1.04rem;margin:12px 0 6px}.step p{font-size:.9rem;color:var(--muted);margin:0}
-    .faq-list{border-top:1px solid var(--line)}
-    .faq-list details{border-bottom:1px solid var(--line);padding:18px 0}
-    .faq-list summary{cursor:pointer;list-style:none;font-weight:750;display:flex;justify-content:space-between;gap:20px}
-    .faq-list summary::-webkit-details-marker{display:none}
-    .faq-list summary:after{content:"+";font-size:1.25rem;color:var(--purple);line-height:1.2}
-    .faq-list details[open] summary:after{content:"−"}
-    .faq-list details p{max-width:850px;color:var(--muted);margin:12px 30px 0 0}
-    .cta{position:relative;overflow:hidden;padding:clamp(30px,6vw,58px);border:1px solid #c4b5fd2d;border-radius:24px;background:radial-gradient(ellipse at 90% 0%,#7c3aed32,transparent 55%),linear-gradient(135deg,#19152a,#11101a)}
-    .cta h2{max-width:650px;margin:15px 0}.cta p{max-width:650px;color:var(--muted);margin:0}
-    footer{border-top:1px solid var(--line);padding:30px 0 26px}
-    .footer-main{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;flex-wrap:wrap}
-    .footer-brand p{max-width:330px;color:#9e97b1;font-size:.88rem;margin:10px 0 0}
-    .footer-links{display:flex;gap:17px;flex-wrap:wrap}
-    .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:26px;padding-top:18px;color:#918ba4;font-size:.78rem}
-    .footer-bottom p{margin:0;max-width:780px}
-    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:45px;padding-top:75px}.hero-copy{max-width:760px}.visual{max-width:620px;width:100%;margin:auto}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{gap:13px}.nav a{font-size:.85rem}}
-    @media(max-width:580px){.wrap{width:min(calc(100% - 30px),var(--max))}.top-inner{position:relative;min-height:72px;align-items:center;flex-direction:row;gap:12px;padding:12px 0}.brand-logo{width:38px;height:38px}.menu-toggle{display:flex;flex-shrink:0}.nav{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;width:100%;padding:12px;border:1px solid #ffffff20;border-radius:16px;background:#12101df7;box-shadow:0 18px 45px #0008;backdrop-filter:blur(18px);align-items:stretch;flex-direction:column;justify-content:flex-start;gap:3px}.nav.is-open{display:flex}.nav a{display:flex;align-items:center;min-height:44px;padding:10px 12px;border-radius:10px;font-size:.95rem}.nav a:hover{background:#ffffff0a}.nav .nav-cta{justify-content:center;margin-top:5px;padding:11px 12px}.hero{padding:56px 0 60px;gap:35px}h1{font-size:clamp(3rem,15vw,4.6rem)}.dashboard{transform:none;border-radius:19px}.dash-content{padding:18px}.ticket{padding:11px;gap:10px}.ticket-icon{width:35px;height:35px;flex-basis:35px}.available{display:none}.trust-inner{justify-content:flex-start;gap:12px 22px}.feature-grid,.split,.steps{grid-template-columns:1fr}.feature{min-height:0;padding:22px}.section{padding:62px 0}.section-head{margin-bottom:25px}.footer-main{flex-direction:column}.footer-links{gap:13px}.footer-bottom{flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-  </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YumeCore","applicationCategory":"CommunicationApplication","description":"Herramienta de soporte para organizar tickets y solicitudes en comunidades de Discord.","url":"https://inochinoyume.github.io/yumecore-web/","image":"https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg"}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0913">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="YumeCore ayuda a las comunidades de Discord a organizar tickets y solicitudes con una experiencia clara, flexible y moderna.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://inochinoyume.github.io/yumecore-web/">
+<link rel="icon" type="image/jpeg" href="123c7a37ea32e786c418e59e43da6a87.jpg">
+<link rel="apple-touch-icon" href="123c7a37ea32e786c418e59e43da6a87.jpg">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_CL"><meta property="og:site_name" content="YumeCore">
+<meta property="og:title" content="YumeCore — Beyond Support"><meta property="og:description" content="Soporte para Discord con tickets, formularios, permisos, automatización y transcripciones."><meta property="og:url" content="https://inochinoyume.github.io/yumecore-web/">
+<meta property="og:image" content="https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="YumeCore — Beyond Support"><meta name="twitter:description" content="Organiza tickets y solicitudes en tu comunidad de Discord."><meta name="twitter:image" content="https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg">
+<title>YumeCore — Beyond Support | Soporte para Discord</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0913;--surface:#12101d;--surface2:#171426;--text:#f8f7ff;--muted:#b9b4ca;--purple:#c4b5fd;--strong:#8b5cf6;--line:#ffffff18;--green:#86efac;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:radial-gradient(ellipse at 78% -10%,#7c3aed30,transparent 42%),radial-gradient(ellipse at 0 42%,#4c1d9514,transparent 38%),var(--bg);color:var(--text);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,summary:focus-visible{outline:3px solid var(--purple);outline-offset:4px;border-radius:5px}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}.skip{position:absolute;left:12px;top:-60px;z-index:20;padding:10px 14px;background:#fff;color:#111;border-radius:8px}.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:10;background:#0b0913e8;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.top{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.035em;font-size:1.12rem;white-space:nowrap}.brand img{width:40px;height:40px;object-fit:cover;border-radius:13px;border:1px solid #ffffff22}.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.nav a{color:var(--muted);text-decoration:none;font-size:.9rem}.nav a:hover{color:var(--text)}.nav .cta{padding:9px 14px;border-radius:10px;background:var(--strong);color:#fff;font-weight:750}.menu{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface2);color:var(--text);font-size:1.2rem}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(36px,7vw,86px);align-items:center;padding:clamp(74px,10vw,125px) 0 86px}.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #c4b5fd30;background:#a78bfa0d;border-radius:999px;padding:7px 12px;color:#ddd6fe;font-size:.82rem;font-weight:650}.dot{width:7px;height:7px;border-radius:50%;background:#a78bfa}.eyebrow{color:var(--purple);font-size:.75rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-size:clamp(3.25rem,7.3vw,6.2rem);line-height:.97;letter-spacing:-.078em;margin:22px 0}.gradient{background:linear-gradient(100deg,#fff 5%,#d8ccff 58%,#a78bfa);background-clip:text;-webkit-background-clip:text;color:transparent}.lead{max-width:650px;color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.2rem);line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 15px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 17px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-size:.94rem;font-weight:750}.btn:hover{border-color:#c4b5fd65;transform:translateY(-1px)}.primary{background:linear-gradient(135deg,#8b5cf6,#6d28d9);border-color:transparent;color:#fff}.micro{color:#918ba6;font-size:.84rem}.micro a{color:#d5cdf0;text-underline-offset:3px}
+.card{border:1px solid #ffffff20;border-radius:24px;background:linear-gradient(145deg,#1c192b,#100e19 76%);box-shadow:0 34px 100px #0007;overflow:hidden;transform:rotate(1deg)}.card-head{padding:17px 19px;border-bottom:1px solid var(--line);font-weight:750}.card-body{padding:23px}.card-kicker{color:#aaa2c0;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}.card h2{font-size:1.45rem;line-height:1.25;margin:7px 0}.card p{color:var(--muted);font-size:.86rem}.ticket{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:14px;background:#ffffff04;margin-top:10px}.icon{display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px;border-radius:11px;background:#8b5cf61e;color:#d7caff}.ticket strong{display:block;font-size:.88rem}.ticket small{color:#a7a0b9}.ok{margin-left:auto;font-size:.68rem;color:var(--green);white-space:nowrap}.card-foot{padding:14px 19px;border-top:1px solid var(--line);color:#aaa2bb;font-size:.77rem}
+.trust{border-block:1px solid var(--line);background:#ffffff02}.trust-inner{display:flex;justify-content:center;gap:clamp(16px,4vw,46px);flex-wrap:wrap;padding:21px 0;color:#c1bbd2;font-size:.86rem}.section{padding:clamp(66px,8vw,100px) 0}.section-head{max-width:720px;margin-bottom:32px}.section h2{font-size:clamp(2.1rem,4.7vw,3.6rem);line-height:1.08;letter-spacing:-.065em;margin:13px 0}.intro{max-width:680px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature,.panel{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#171426b8,#11101a9c);padding:24px}.feature{min-height:185px}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#a78bfa0e;border:1px solid #c4b5fd28;color:#d5c9ff;margin-bottom:18px}.feature h3,.panel h3{font-size:1.02rem;margin:0 0 8px}.feature p,.panel p{color:var(--muted);font-size:.91rem;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{border-top:1px solid #c4b5fd40;padding-top:17px}.step b{color:var(--purple);font-size:.78rem;letter-spacing:.12em}.step h3{margin:10px 0 6px}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}.label{color:var(--purple);font-size:.75rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.panel h3{font-size:1.45rem;margin:9px 0}.faq{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;list-style:none;font-weight:750;display:flex;justify-content:space-between;gap:20px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--purple);font-size:1.2rem}details[open] summary:after{content:"−"}details p{max-width:850px;color:var(--muted);margin:11px 30px 0 0}.cta{border:1px solid #c4b5fd2d;border-radius:24px;padding:clamp(30px,6vw,58px);background:radial-gradient(ellipse at 90% 0,#7c3aed32,transparent 55%),linear-gradient(135deg,#19152a,#11101a)}.cta p{max-width:680px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:30px 0 26px}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.links{display:flex;gap:16px;flex-wrap:wrap}.links a{color:var(--muted);font-size:.86rem}.bottom{border-top:1px solid var(--line);margin-top:24px;padding-top:17px;color:#918ba4;font-size:.78rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.card{max-width:620px;margin:auto}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.wrap{width:min(calc(100% - 30px),var(--max))}.menu{display:block}.nav{display:none;position:absolute;left:15px;right:15px;top:70px;padding:12px;border:1px solid var(--line);border-radius:15px;background:#12101df7;box-shadow:0 18px 45px #0008;flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a{padding:10px 12px}.hero{padding:56px 0 60px}.hero h1{font-size:clamp(3rem,15vw,4.6rem)}.card{transform:none}.grid,.steps,.split{grid-template-columns:1fr}.section{padding:62px 0}.feature{min-height:0}.bottom{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YumeCore","applicationCategory":"CommunicationApplication","description":"Herramienta de soporte para organizar tickets y solicitudes en comunidades de Discord.","url":"https://inochinoyume.github.io/yumecore-web/","image":"https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg"}</script>
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="brand" href="#inicio" aria-label="YumeCore, inicio"><img class="brand-logo" src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40"><span>YumeCore</span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav" id="primary-navigation" aria-label="Navegación principal">
-        <a href="#funciones">Funciones</a><a href="#como-funciona">Cómo funciona</a><a href="#preguntas">Preguntas frecuentes</a><a href="terms.html">Términos</a><a href="privacy.html">Privacidad</a>
-        <a class="nav-cta" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir bot <span aria-hidden="true">↗</span></a>
-      </nav>
-    </div>
-  </header>
-  <main id="contenido">
-    <section class="wrap hero" id="inicio">
-      <div class="hero-copy">
-        <span class="tag"><span class="tag-dot" aria-hidden="true"></span> Soporte para Discord · Beyond Support</span>
-        <h1>Tu comunidad merece un soporte <span class="gradient">mejor.</span></h1>
-        <p class="lead">Organiza tickets y solicitudes con una experiencia clara, flexible y cuidada. YumeCore ayuda a que cada consulta llegue al lugar adecuado y que tu equipo trabaje con más orden.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir a Discord <span class="btn-arrow" aria-hidden="true">↗</span></a>
-          <a class="btn" href="#funciones">Descubrir funciones <span class="btn-arrow" aria-hidden="true">↓</span></a>
-        </div>
-        <p class="microcopy">¿Tienes dudas? El enlace del servidor de soporte está en renovación.</p>
-      </div>
-      <div class="visual">
-        <div class="dashboard" role="img" aria-label="Vista ilustrativa de un panel de tickets de YumeCore">
-          <div class="dash-head"><div class="dash-brand"><img src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="28" height="28"> YumeCore <span style="color:#8e87a5;font-weight:500">/ Centro de soporte</span></div><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
-          <div class="dash-content">
-            <div class="dash-kicker">Centro de ayuda</div><h2 class="dash-title">¿En qué podemos ayudarte?</h2><p class="dash-sub">Selecciona la opción que mejor describa tu consulta.</p>
-            <div class="ticket"><div class="ticket-icon" aria-hidden="true">↗</div><div class="ticket-copy"><strong>Soporte general</strong><small>Preguntas y asistencia</small></div><span class="available">Disponible</span></div>
-            <div class="ticket"><div class="ticket-icon" aria-hidden="true">◇</div><div class="ticket-copy"><strong>Solicitudes</strong><small>Información organizada</small></div><span class="available">Disponible</span></div>
-            <div class="ticket"><div class="ticket-icon" aria-hidden="true">▤</div><div class="ticket-copy"><strong>Atención del equipo</strong><small>Seguimiento de casos</small></div></div>
-          </div>
-          <div class="dash-foot"><span aria-hidden="true"></span> Vista conceptual · las opciones dependen de la configuración</div>
-        </div>
-      </div>
-    </section>
-    <div class="trust" aria-label="Principios del producto"><div class="wrap trust-inner"><span class="trust-item"><span class="trust-symbol" aria-hidden="true">◇</span> Organización clara</span><span class="trust-item"><span class="trust-symbol" aria-hidden="true">⌘</span> Configuración flexible</span><span class="trust-item"><span class="trust-symbol" aria-hidden="true">◎</span> Enfoque en la comunidad</span><span class="trust-item"><span class="trust-symbol" aria-hidden="true">↗</span> Experiencia sencilla</span></div></div>
-    <section class="wrap section" id="funciones">
-      <div class="section-head"><span class="eyebrow">Funciones</span><h2>Menos desorden. Más claridad.</h2><p class="section-intro">Una base de soporte pensada para que los miembros sepan dónde acudir y los equipos puedan gestionar las solicitudes de forma ordenada.</p></div>
-      <div class="feature-grid">
-        <article class="feature"><div class="feature-mark" aria-hidden="true">▦</div><h3>Paneles y categorías configurables</h3><p>Crea paneles independientes, organiza categorías propias y elige dónde publicar cada punto de entrada al soporte.</p></article>
-        <article class="feature"><div class="feature-mark" aria-hidden="true">◇</div><h3>Gestión completa del ticket</h3><p>El equipo autorizado puede reclamar, transferir, asignar prioridad y estado, administrar participantes, bloquear y añadir notas internas.</p></article>
-        <article class="feature"><div class="feature-mark" aria-hidden="true">☷</div><h3>Formularios a medida</h3><p>Adapta las preguntas de cada categoría para recopilar la información necesaria desde el inicio.</p></article>
-        <article class="feature"><div class="feature-mark" aria-hidden="true">⌘</div><h3>Permisos y auditoría</h3><p>Configura qué roles pueden realizar cada acción y separa los registros operativos, de auditoría y de errores.</p></article>
-        <article class="feature"><div class="feature-mark" aria-hidden="true">⚙</div><h3>Automatización configurable</h3><p>Configura recordatorios, cierre por inactividad, límites de tickets activos, cooldown y protección anti-spam.</p></article>
-        <article class="feature"><div class="feature-mark" aria-hidden="true">✧</div><h3>Transcripciones y copias</h3><p>Guarda transcripciones en almacenamiento privado de Supabase y exporta o restaura configuraciones con validaciones por servidor.</p></article>
-      </div>
-      <p class="microcopy" style="margin-top:18px">Las funciones visibles y disponibles pueden variar según la versión del bot y la configuración del servidor.</p>
-    </section>
-    <section class="wrap section" id="como-funciona">
-      <div class="section-head"><span class="eyebrow">Cómo funciona</span><h2>Un punto de partida simple para todos.</h2><p class="section-intro">El objetivo es reducir la fricción al pedir ayuda y dar al equipo un espacio claro para atender cada caso.</p></div>
-      <div class="steps">
-        <article class="step"><h3>El miembro elige una opción</h3><p>Accede al panel publicado por el servidor y selecciona el tipo de consulta que necesita.</p></article>
-        <article class="step"><h3>Se organiza la solicitud</h3><p>El flujo configurado reúne la información y crea el espacio de atención correspondiente.</p></article>
-        <article class="step"><h3>El equipo da seguimiento</h3><p>El personal autorizado revisa la solicitud y ayuda al miembro según las normas de la comunidad.</p></article>
-      </div>
-      <div class="split" style="margin-top:34px">
-        <article class="audience"><span class="audience-label">Para miembros</span><h3>Pedir ayuda sin perderse.</h3><p>Encuentra el panel de soporte, selecciona una opción y explica lo que necesitas en el espacio indicado por el servidor.</p></article>
-        <article class="audience"><span class="audience-label">Para administradores</span><h3>Un flujo adaptado a tu comunidad.</h3><p>Organiza las opciones y categorías, revisa los permisos y concede al bot únicamente los accesos necesarios.</p></article>
-      </div>
-    </section>
-    <section class="wrap section" id="preguntas">
-      <div class="section-head"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo importante, explicado.</h2><p class="section-intro">¿Es tu primera vez con YumeCore? Aquí tienes respuestas rápidas a las dudas más habituales.</p></div>
-      <div class="faq-list">
-        <details><summary>¿Cómo añado YumeCore a mi servidor?</summary><p>Utiliza el botón «Añadir a Discord» y completa el proceso de autorización. Revisa los permisos solicitados y asegúrate de contar con autorización para añadir aplicaciones al servidor.</p></details>
-        <details><summary>¿Cómo configuro los tickets?</summary><p>YumeCore permite configurar paneles, categorías, formularios, canales, roles y automatización desde las herramientas disponibles en Discord. El tutorial interactivo y el servidor oficial de soporte pueden ayudarte a revisar los ajustes adecuados para tu comunidad.</p></details>
-        <details><summary>¿Quién puede ver los tickets y las transcripciones?</summary><p>Los tickets dependen de los permisos del canal y de las reglas de acceso configuradas. Las transcripciones guardadas en Supabase se almacenan en un bucket privado; si el servidor elige publicarlas como archivo en un canal de transcripciones, los permisos de ese canal determinan quién puede verlas.</p></details>
-        <details><summary>¿YumeCore está afiliado a Discord?</summary><p>No. YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc.</p></details>
-        <details><summary>¿Dónde puedo pedir ayuda o consultar la privacidad?</summary><p>El enlace de invitación del servidor de soporte está en renovación. Para conocer el alcance del servicio, consulta la <a href="privacy.html">política de privacidad</a> y los <a href="terms.html">términos de servicio</a>.</p></details>
-      </div>
-    </section>
-    <section class="wrap section" id="comunidad">
-      <div class="cta"><span class="eyebrow">Empieza aquí</span><h2>Haz que pedir ayuda sea más sencillo.</h2><p>Conoce YumeCore, revisa las opciones disponibles y prepara un espacio de soporte que tenga sentido para tu comunidad.</p><div class="actions"><a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir YumeCore <span aria-hidden="true">↗</span></a><span class="btn" aria-disabled="true">Enlace de soporte en renovación</span></div></div>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap">
-      <div class="footer-main">
-        <div class="footer-brand"><a class="brand" href="#inicio"><img class="brand-logo" src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40"><span>YumeCore</span></a><p>Beyond Support. Herramientas para una experiencia de soporte más clara en Discord.</p></div>
-        <nav class="footer-links" aria-label="Enlaces del pie de página"><a href="terms.html">Términos de servicio</a><a href="privacy.html">Privacidad</a><span>Soporte (enlace en renovación)</span><a href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Invitar bot</a></nav>
-      </div>
-      <div class="footer-bottom"><p>YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc. Discord es una marca de sus respectivos propietarios.</p><span>© 2026 YumeCore · Beyond Support</span></div>
-    </div>
-  </footer>
-  <script>
-    (() => {
-      const toggle = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector("#primary-navigation");
-      if (!toggle || !navigation) return;
-      const closeMenu = () => {
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menú de navegación");
-        navigation.classList.remove("is-open");
-      };
-      toggle.addEventListener("click", () => {
-        const isOpen = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!isOpen));
-        toggle.setAttribute("aria-label", isOpen ? "Abrir menú de navegación" : "Cerrar menú de navegación");
-        navigation.classList.toggle("is-open", !isOpen);
-      });
-      navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-      document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeMenu(); toggle.focus(); } });
-      window.addEventListener("resize", () => { if (window.matchMedia("(min-width: 581px)").matches) closeMenu(); });
-    })();
-  </script>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header><div class="wrap top"><a class="brand" href="#inicio" aria-label="YumeCore, inicio"><img src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40"><span>YumeCore</span></a><button class="menu" type="button" aria-label="Abrir menú" aria-controls="nav" aria-expanded="false">☰</button><nav class="nav" id="nav" aria-label="Navegación principal"><a href="#funciones">Funciones</a><a href="#como-funciona">Cómo funciona</a><a href="#preguntas">FAQ</a><a href="support.html">Soporte</a><a href="terms.html">Términos</a><a href="privacy.html">Privacidad</a><a class="cta" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir bot ↗</a></nav></div></header>
+<main id="contenido">
+<section class="wrap hero" id="inicio"><div><span class="tag"><span class="dot" aria-hidden="true"></span> Soporte para Discord · Beyond Support</span><h1>Tu comunidad merece un soporte <span class="gradient">mejor.</span></h1><p class="lead">Organiza tickets y solicitudes con una experiencia clara, flexible y cuidada. YumeCore ayuda a que cada consulta llegue al lugar adecuado y que tu equipo trabaje con más orden.</p><div class="actions"><a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir a Discord ↗</a><a class="btn" href="support.html">Servidor de soporte ↗</a></div><p class="micro">Soporte oficial: <a href="https://discord.gg/7QTeThJvrV" target="_blank" rel="noopener noreferrer">discord.gg/7QTeThJvrV</a> · invitación permanente.</p></div>
+<div class="card" role="img" aria-label="Vista conceptual de un panel de tickets de YumeCore"><div class="card-head">YumeCore / Centro de soporte</div><div class="card-body"><span class="card-kicker">Centro de ayuda</span><h2>¿En qué podemos ayudarte?</h2><p>Selecciona la opción que mejor describa tu consulta.</p><div class="ticket"><span class="icon" aria-hidden="true">↗</span><div><strong>Soporte general</strong><small>Preguntas y asistencia</small></div><span class="ok">Disponible</span></div><div class="ticket"><span class="icon" aria-hidden="true">◇</span><div><strong>Solicitudes</strong><small>Información organizada</small></div><span class="ok">Disponible</span></div><div class="ticket"><span class="icon" aria-hidden="true">▤</span><div><strong>Atención del equipo</strong><small>Seguimiento de casos</small></div></div></div><div class="card-foot">Vista conceptual · las opciones dependen de la configuración</div></div></section>
+<div class="trust"><div class="wrap trust-inner"><span>◇ Organización clara</span><span>⌘ Configuración flexible</span><span>◎ Enfoque en la comunidad</span><span>↗ Experiencia sencilla</span></div></div>
+<section class="wrap section" id="funciones"><div class="section-head"><span class="eyebrow">Funciones</span><h2>Menos desorden. Más claridad.</h2><p class="intro">Una base de soporte pensada para que los miembros sepan dónde acudir y los equipos puedan gestionar cada solicitud de forma ordenada.</p></div><div class="grid">
+<article class="feature"><div class="mark">▦</div><h3>Paneles y categorías configurables</h3><p>Crea paneles independientes, categorías propias y elige dónde publicar cada punto de entrada.</p></article>
+<article class="feature"><div class="mark">◇</div><h3>Gestión completa del ticket</h3><p>Reclamar, transferir, prioridad, estado, participantes, bloqueo, notas internas, renombrado e información.</p></article>
+<article class="feature"><div class="mark">☷</div><h3>Formularios a medida</h3><p>Adapta las preguntas de cada categoría para recopilar la información necesaria desde el inicio.</p></article>
+<article class="feature"><div class="mark">⌘</div><h3>Permisos y auditoría</h3><p>Configura qué roles pueden realizar cada acción y separa registros operativos, de auditoría y de errores.</p></article>
+<article class="feature"><div class="mark">⚙</div><h3>Automatización configurable</h3><p>Recordatorios, cierre por inactividad, límites, cooldown y protección anti-spam configurables.</p></article>
+<article class="feature"><div class="mark">✧</div><h3>Transcripciones y copias</h3><p>Transcripciones en Supabase Storage privado y copias opcionales en el canal elegido por cada servidor.</p></article>
+</div><p class="micro">Las funciones disponibles pueden variar según la versión del bot y la configuración del servidor.</p></section>
+<section class="wrap section" id="como-funciona"><div class="section-head"><span class="eyebrow">Cómo funciona</span><h2>Un punto de partida simple para todos.</h2><p class="intro">El objetivo es reducir la fricción al pedir ayuda y dar al equipo un espacio claro para atender cada caso.</p></div><div class="steps"><article class="step"><b>01</b><h3>El miembro elige una opción</h3><p>Accede al panel publicado y selecciona el tipo de consulta que necesita.</p></article><article class="step"><b>02</b><h3>Se organiza la solicitud</h3><p>El flujo configurado reúne la información y crea el espacio de atención correspondiente.</p></article><article class="step"><b>03</b><h3>El equipo da seguimiento</h3><p>El personal autorizado revisa la solicitud y ayuda según las normas de la comunidad.</p></article></div><div class="split"><article class="panel"><span class="label">Para miembros</span><h3>Pedir ayuda sin perderse.</h3><p>Encuentra el panel, selecciona una opción y explica lo que necesitas en el espacio indicado.</p></article><article class="panel"><span class="label">Para administradores</span><h3>Un flujo adaptado a tu comunidad.</h3><p>Organiza opciones, categorías, permisos, canales y roles, concediendo al bot solo los accesos necesarios.</p></article></div></section>
+<section class="wrap section" id="preguntas"><div class="section-head"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo importante, explicado.</h2><p class="intro">Respuestas rápidas para comenzar con YumeCore.</p></div><div class="faq"><details><summary>¿Cómo añado YumeCore a mi servidor?</summary><p>Usa «Añadir a Discord», completa la autorización y revisa los permisos solicitados.</p></details><details><summary>¿Cómo configuro los tickets?</summary><p>YumeCore permite configurar paneles, categorías, formularios, canales, roles y automatización desde Discord. El tutorial interactivo ayuda a recorrer la configuración.</p></details><details><summary>¿Quién puede ver los tickets y las transcripciones?</summary><p>Depende de los permisos del canal y de la configuración del servidor. Las transcripciones privadas de Supabase no son públicas; las copias publicadas en Discord dependen de los permisos del canal.</p></details><details><summary>¿YumeCore está afiliado a Discord?</summary><p>No. YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc.</p></details><details><summary>¿Dónde puedo pedir ayuda?</summary><p>Visita el <a href="support.html">servidor oficial de soporte</a> o entra directamente mediante la invitación permanente <a href="https://discord.gg/7QTeThJvrV" target="_blank" rel="noopener noreferrer">discord.gg/7QTeThJvrV</a>.</p></details></div></section>
+<section class="wrap section"><div class="cta"><span class="eyebrow">Empieza aquí</span><h2>Haz que pedir ayuda sea más sencillo.</h2><p>Conoce YumeCore, añade el bot y prepara un espacio de soporte que tenga sentido para tu comunidad.</p><div class="actions"><a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir YumeCore ↗</a><a class="btn" href="support.html">Soporte oficial ↗</a></div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot"><div><a class="brand" href="#inicio"><img src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40">YumeCore</a><p class="micro">Beyond Support. Herramientas para una experiencia de soporte más clara en Discord.</p></div><nav class="links" aria-label="Enlaces del pie de página"><a href="support.html">Soporte</a><a href="terms.html">Términos</a><a href="privacy.html">Privacidad</a><a href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Invitar bot</a></nav></div><div class="bottom"><span>YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc.</span><span>© 2026 YumeCore · Beyond Support</span></div></div></footer>
+<script>(()=>{const b=document.querySelector('.menu'),n=document.querySelector('#nav');if(!b||!n)return;const close=()=>{b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');n.classList.remove('open')};b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'Abrir menú':'Cerrar menú');n.classList.toggle('open',!open)});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();b.focus()}});window.addEventListener('resize',()=>{if(window.matchMedia('(min-width:581px)').matches)close()})})();</script>
 </body>
 </html>
