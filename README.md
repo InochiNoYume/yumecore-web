@@ -17,7 +17,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - Tickets privados con controles para Staff desde el propio canal.
 - Reclamar/liberar, transferir, cambiar prioridad y estado, bloquear/desbloquear, participantes, notas e información del ticket.
 - Cierre reservado al equipo de Staff; el solicitante no puede cerrar su propio ticket.
-- Reapertura, archivo y papelera; las transcripciones se guardan en Supabase Storage privado y pueden publicarse como archivo en el canal configurado por cada servidor (el acceso depende de los permisos de ese canal).
+- Reapertura, archivo y papelera; las transcripciones se guardan en Supabase Storage privado y pueden publicarse como archivo en el canal configurado por cada servidor.
 - Configuración por servidor y tutorial interactivo por categorías.
 - Automatización, límites, anti-spam, backups y diagnóstico.
 - Acceso interno separado para propietario y desarrolladores del bot, sin mezclarlos con el programa Beta Tester.
@@ -31,11 +31,11 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - `404.html`: página de error personalizada.
 - `robots.txt` y `sitemap.xml`: directivas de rastreo y mapa de páginas.
 - `123c7a37ea32e786c418e59e43da6a87.jpg`: imagen de marca usada en el sitio y como favicon.
-- `.github/workflows/pages.yml`: validación de enlaces y publicación mediante GitHub Pages.
+- `.github/workflows/pages.yml`: validación de estructura, accesibilidad básica, enlaces locales y publicación mediante GitHub Pages.
 
 ## Publicación
 
-El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**. Cada actualización ejecuta comprobaciones de estructura, accesibilidad básica y enlaces/recursos locales antes de publicar.
+El sitio se publica mediante GitHub Pages y GitHub Actions. En **Settings → Pages**, la fuente de publicación debe estar configurada en **GitHub Actions**. Las actualizaciones se validan antes de publicar.
 
 ## Seguridad y privacidad
 
