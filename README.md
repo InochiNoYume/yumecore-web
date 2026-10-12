@@ -6,7 +6,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 - **Sitio web:** https://inochinoyume.github.io/yumecore-web/
 - **Añadir el bot:** https://discord.com/oauth2/authorize?client_id=1549554629853843596
-- **Servidor de soporte:** https://discord.gg/7QTeThJvrV
+- **Servidor de soporte:** enlace de invitación en renovación; se publicará uno nuevo cuando esté verificado.
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
