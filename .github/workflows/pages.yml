@@ -3,12 +3,12 @@ name: Deploy YumeCore website
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: yumecore-public-site
@@ -111,6 +111,11 @@ jobs:
           path: .
 
   deploy:
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     timeout-minutes: 10
     environment:
       name: github-pages
