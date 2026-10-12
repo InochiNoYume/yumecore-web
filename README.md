@@ -16,7 +16,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - Tickets privados con controles para Staff desde el propio canal.
 - Reclamar/liberar, transferir, cambiar prioridad y estado, bloquear/desbloquear, participantes, notas e información del ticket.
 - Cierre reservado al equipo de Staff; el solicitante no puede cerrar su propio ticket.
-- Reapertura, archivo, papelera y transcripciones privadas.
+- Reapertura, archivo y papelera; las transcripciones se guardan en Supabase Storage privado y pueden publicarse como archivo en el canal configurado por cada servidor (el acceso depende de los permisos de ese canal).
 - Configuración por servidor y tutorial interactivo por categorías.
 - Automatización, límites, anti-spam, backups y diagnóstico.
 - Acceso interno separado para propietario y desarrolladores del bot, sin mezclarlos con el programa Beta Tester.
