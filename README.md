@@ -6,10 +6,12 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 - **Sitio web:** https://inochinoyume.github.io/yumecore-web/
 - **Añadir el bot:** https://discord.com/oauth2/authorize?client_id=1549554629853843596
-- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación permanente.
+- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación permanente oficial.
 - **Página de soporte:** https://inochinoyume.github.io/yumecore-web/support.html
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
+
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. Debe mantenerse igual en la web pública y en `SUPPORT_SERVER_URL` del bot.
 
 ## Funciones destacadas
 
@@ -18,7 +20,10 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - Reclamar/liberar, transferir, cambiar prioridad y estado, bloquear/desbloquear, participantes, notas e información del ticket.
 - Cierre reservado al equipo de Staff; el solicitante no puede cerrar su propio ticket.
 - Reapertura, archivo y papelera; las transcripciones se guardan en Supabase Storage privado y pueden publicarse como archivo en el canal configurado por cada servidor.
-- Configuración por servidor y tutorial interactivo por categorías.
+- Retención automática de tickets cerrados con la política actual de 90 días.
+- Eliminación aislada de los datos de una guild cuando el bot es expulsado de ella; las guilds temporalmente no disponibles conservan sus datos.
+- Resolución segura de paneles por UUID o nombre sin mezclar datos entre guilds.
+- Configuración por servidor y tutorial interactivo por categorías mediante menús desplegables.
 - Automatización, límites, anti-spam, backups y diagnóstico.
 - Acceso interno separado para propietario y desarrolladores del bot, sin mezclarlos con el programa Beta Tester.
 
