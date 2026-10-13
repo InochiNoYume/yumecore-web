@@ -73,6 +73,10 @@ Cuando un miembro reclama un ticket, la interfaz identifica al responsable media
 
 El sitio se publica mediante GitHub Pages y GitHub Actions. Las pull requests se validan sin publicar; los cambios aceptados en `main` pueden desplegarse.
 
+## Identidad visual y accesibilidad
+
+La web usa una identidad oscura con acentos lavanda y rosa, tarjetas refinadas, animaciones discretas y un fondo de partículas ligero. Los recursos compartidos están en `assets/yumecore-premium.css` y `assets/yumecore-effects.js`; no requieren librerías externas y respetan `prefers-reduced-motion`. La interfaz pública evita emojis decorativos.
+
 ## Continuidad del proyecto
 
 - `PROJECT-STATE.md`: estado actual y verificaciones.

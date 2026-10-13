@@ -96,3 +96,12 @@ Este sitio es público. Solo debe contener información que pueda publicarse de 
 - Workflow de la PR #4: run `38350032168` — **SUCCESS** en el commit `46a7a0b4dc37078a52e149475fe1c9c9e5118694`. La validación estática pasó; el job de deploy fue omitido correctamente al ser una PR.
 - No se ha publicado la rama de auditoría a GitHub Pages ni se ha modificado `main`; la PR #4 sigue abierta en borrador.
 - La comprobación directa de las páginas publicadas no estuvo disponible mediante el lector web en esta sesión; los hallazgos de navegación se basan en el HTML fuente y el workflow del repositorio.
+
+
+## Estado operativo más reciente — 2026-10-13
+
+- PR #4 está fusionada: navegación coherente entre Inicio, Funciones, Tutorial, Soporte y Créditos; el CI de producción fue correcto en el run 38354248354.
+- Se incorporó una identidad visual compartida premium/kawaii con base oscura, acentos lavanda/rosa, transiciones, revelado progresivo y partículas discretas. Los efectos respetan `prefers-reduced-motion` y no requieren dependencias externas.
+- PR #5 está fusionada: el tutorial ya no promete canales de archivo/papelera que el ciclo actual no utiliza y explica el aviso de inactividad con valoración y confirmación. Se retiraron pictogramas decorativos y flechas de CTA; el menú móvil usa el texto accesible «Menú» y las tarjetas usan numeración.
+- CI de PR #5: run 38355548226 SUCCESS. CI y despliegue posterior en main: run 38355586854 SUCCESS.
+- El sitio sigue siendo informativo: la configuración del bot se realiza desde Discord; no se ha creado un panel web de administración.

@@ -45,3 +45,11 @@ Después de una modificación relevante, actualizar `PROJECT-HISTORY.md` y `PROJ
 - Prevención: el workflow ahora exige que las páginas públicas de funciones, tutorial, soporte y créditos estén presentes. El sitemap incorpora créditos.
 - CI de `main` anterior a la auditoría: run `38344102428` — **SUCCESS**. CI de los cambios de esta rama pendiente de ejecutar mediante PR.
 - No se fusionó ni se desplegó a producción.
+
+
+## 2026-10-13 — Pulido premium y sincronización de la documentación pública
+
+- PR #4 fusionada: navegación compartida, páginas públicas obligatorias en CI y sitemap actualizado.
+- Añadidos `assets/yumecore-premium.css` y `assets/yumecore-effects.js` para una identidad premium/kawaii sin emojis decorativos, con acentos lavanda/rosa, animaciones suaves y partículas discretas. El efecto respeta `prefers-reduced-motion` y limita el trabajo en dispositivos móviles.
+- PR #5 fusionada: el tutorial describe el flujo actual de tickets y la confirmación de cierre; se eliminaron pictogramas y flechas decorativas de la web pública.
+- CI de la PR #5: run 38355548226 SUCCESS. Despliegue final de main: run 38355586854 SUCCESS.
