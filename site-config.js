@@ -2,6 +2,7 @@
 window.YUMECORE_SITE = {
   publicInfoUrl: "",
   supportServerUrl: "https://discord.gg/7QTeThJvrV",
+  supportInviteCode: "7QTeThJvrV",
   supportServerLabel: "Servidor oficial de soporte",
   supportInvitePermanent: true,
   supportInviteStatus: "Invitación oficial, activa y permanente",
