@@ -95,7 +95,7 @@ jobs:
                   if anchor not in parser.ids:
                       errors.append(f"{page}: ancla interna inexistente: #{anchor}")
 
-          for required in ("index.html", "terms.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "123c7a37ea32e786c418e59e43da6a87.jpg"):
+          for required in ("index.html", "features.html", "tutorial.html", "support.html", "credits.html", "terms.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "site-config.js", "123c7a37ea32e786c418e59e43da6a87.jpg"):
               if not (root / required).exists():
                   errors.append(f"falta archivo requerido: {required}")
 

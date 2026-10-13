@@ -71,3 +71,28 @@ La política pública actual es de 90 días para tickets cerrados. El valor púb
 ## Regla de continuidad
 
 Este sitio es público. Solo debe contener información que pueda publicarse de forma segura. Las credenciales y detalles internos de infraestructura pertenecen al repositorio privado del bot y nunca deben copiarse aquí.
+
+
+## Auditoría de navegación y enlaces — 2026-10-13
+
+### Hallazgos
+
+- Las páginas `features.html`, `tutorial.html` y `support.html` sí existen en el repositorio público, pero la portada no enlazaba directamente a la página completa de funciones ni al tutorial desde su navegación principal.
+- Las páginas de funciones y tutorial solo tenían la marca/enlace de regreso al inicio en el encabezado, sin navegación compartida entre las páginas.
+- La lista de archivos requeridos del workflow no exigía `features.html`, `tutorial.html`, `support.html` ni `credits.html`; por tanto, una página principal secundaria podía desaparecer sin fallar ese control específico.
+- El sitemap incluía funciones, tutorial y soporte, pero omitía créditos.
+
+### Cambios en la rama `fix/site-navigation-audit`
+
+- Añadidos enlaces directos a Funciones y Tutorial en la navegación y el pie de la portada.
+- Añadida navegación coherente Inicio / Funciones / Tutorial / Soporte a las páginas de funciones y tutorial.
+- Añadidos enlaces cruzados a Funciones y Tutorial en Soporte.
+- Ampliada la lista obligatoria del CI para todas las páginas públicas clave y `site-config.js`.
+- Añadida la página de créditos al sitemap.
+
+### Verificación
+
+- La última ejecución de la rama `main` antes de estos cambios fue Deploy YumeCore website #64, run `38344102428`, **SUCCESS**.
+- Workflow de la PR #4: run `38350032168` — **SUCCESS** en el commit `46a7a0b4dc37078a52e149475fe1c9c9e5118694`. La validación estática pasó; el job de deploy fue omitido correctamente al ser una PR.
+- No se ha publicado la rama de auditoría a GitHub Pages ni se ha modificado `main`; la PR #4 sigue abierta en borrador.
+- La comprobación directa de las páginas publicadas no estuvo disponible mediante el lector web en esta sesión; los hallazgos de navegación se basan en el HTML fuente y el workflow del repositorio.

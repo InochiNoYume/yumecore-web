@@ -36,3 +36,12 @@ El sitio queda alineado con el contrato público actual del bot: soporte oficial
 ## Regla para continuar
 
 Después de una modificación relevante, actualizar `PROJECT-HISTORY.md` y `PROJECT-STATE.md` con fecha, hora, qué cambió, resultado real de CI, referencia del run, fallos/correcciones y siguiente punto de trabajo.
+
+
+## 2026-10-13 — Auditoría de enlaces de la web pública
+
+- Hallazgo: la portada no mostraba enlaces directos a `features.html` y `tutorial.html`, y las páginas secundarias no ofrecían una navegación consistente.
+- Corrección: se añadió navegación cruzada Inicio, Funciones, Tutorial y Soporte, incluyendo la portada, el footer y la página de soporte.
+- Prevención: el workflow ahora exige que las páginas públicas de funciones, tutorial, soporte y créditos estén presentes. El sitemap incorpora créditos.
+- CI de `main` anterior a la auditoría: run `38344102428` — **SUCCESS**. CI de los cambios de esta rama pendiente de ejecutar mediante PR.
+- No se fusionó ni se desplegó a producción.
