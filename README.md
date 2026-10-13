@@ -22,11 +22,15 @@ YumeCore separa la configuración del proyecto de la configuración propia de ca
 
 Los valores globales del bot se mantienen en el entorno privado de la aplicación. Aquí entran los textos globales de bienvenida, términos, privacidad, créditos y tutorial, además de credenciales y otros valores operativos. Estos textos no los modifica el owner de una guild.
 
+La bienvenida del bot utiliza la misma invitación canónica de soporte indicada arriba; no debe aparecer una URL antigua o distinta.
+
 ### Por guild — gestionado desde Discord
 
 Cada owner/administrador de una guild configura desde Discord sus paneles, categorías, formularios, preguntas, mensajes de tickets, mensajes de apertura/cierre, mensajes operativos enviados durante la atención de tickets, permisos, roles, canales, prioridades, automatización, apariencia y demás opciones de su comunidad.
 
 Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes específicos de tickets y de Staff no se guardan en el `.env` global.
+
+Cuando un miembro reclama un ticket, la interfaz identifica al responsable mediante una mención de Discord en lugar de mostrar el ID numérico.
 
 ## Política pública actual
 
@@ -34,6 +38,7 @@ Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes es
 - La política se refleja en `site-config.js` y debe mantenerse alineada con `TICKET_RETENTION_DAYS=90` del bot.
 - Cuando el bot abandona una guild confirmada, sus datos y recursos asociados se eliminan de forma aislada. Una indisponibilidad temporal de Discord no se trata como expulsión.
 - Las transcripciones privadas se almacenan en Supabase; las copias publicadas en Discord dependen de los permisos del canal configurado.
+- El cierre actual genera la valoración del solicitante y, tras confirmarse, elimina el canal después de guardar el transcript; no existe un paso de archivo/reapertura.
 
 ## Funciones destacadas
 
@@ -43,7 +48,7 @@ Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes es
 - Bienvenida, términos, privacidad, créditos y tutorial globales administrados por el propietario del bot.
 - Menús desplegables para las acciones persistentes del ticket.
 - Reclamar/liberar, transferir, prioridad, estado, participantes, bloqueo, notas, información e historial.
-- Cierre que genera el transcript y elimina inmediatamente el canal. No hay archivado ni reapertura.
+- Cierre con valoración y eliminación posterior del canal, sin archivado/reapertura.
 - Encuesta 1–5 mediante menú desplegable privado enviado al solicitante.
 - Retención automática según la política actual de 90 días.
 - Eliminación aislada de los datos de una guild cuando el bot es expulsado; las guilds temporalmente no disponibles conservan sus datos.
