@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b0913">
+<meta name="theme-color" content="#061326">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="YumeCore ayuda a las comunidades de Discord a organizar tickets y solicitudes con una experiencia clara, flexible y moderna.">
 <meta name="robots" content="index,follow">
@@ -28,7 +28,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 26px}.foot{display:flex;j
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YumeCore","applicationCategory":"CommunicationApplication","description":"Herramienta de soporte para organizar tickets y solicitudes en comunidades de Discord.","url":"https://inochinoyume.github.io/yumecore-web/","image":"https://inochinoyume.github.io/yumecore-web/123c7a37ea32e786c418e59e43da6a87.jpg"}</script>
-  <link rel="stylesheet" href="assets/yumecore-premium.css?v=1">
+  <link rel="stylesheet" href="assets/yumecore-premium.css?v=2">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -50,7 +50,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 26px}.foot{display:flex;j
 <section class="wrap section"><div class="cta"><span class="eyebrow">Empieza aquí</span><h2>Haz que pedir ayuda sea más sencillo.</h2><p>Conoce YumeCore, añade el bot y prepara un espacio de soporte que tenga sentido para tu comunidad.</p><div class="actions"><a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Añadir YumeCore </a><a class="btn" href="support.html">Soporte oficial </a></div></div></section>
 </main>
 <footer><div class="wrap"><div class="foot"><div><a class="brand" href="#inicio"><img src="123c7a37ea32e786c418e59e43da6a87.jpg" alt="" width="40" height="40">YumeCore</a><p class="micro">Beyond Support. Herramientas para una experiencia de soporte más clara en Discord.</p></div><nav class="links" aria-label="Enlaces del pie de página"><a href="features.html">Funciones</a><a href="tutorial.html">Tutorial</a><a href="support.html">Soporte</a><a href="terms.html">Términos</a><a href="privacy.html">Privacidad</a><a href="https://discord.com/oauth2/authorize?client_id=1549554629853843596" target="_blank" rel="noopener noreferrer">Invitar bot</a></nav></div><div class="bottom"><span>YumeCore es un proyecto independiente y no está afiliado, respaldado ni patrocinado por Discord Inc.</span><span>Copyright 2026 YumeCore · Beyond Support</span></div></div></footer>
-<script>(()=>{const b=document.querySelector('.menu'),n=document.querySelector('#nav');if(!b||!n)return;const close=()=>{b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');n.classList.remove('open')};b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.setAttribute('aria-label',open?'Abrir menú':'Cerrar menú');n.classList.toggle('open',!open)});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();b.focus()}});window.addEventListener('resize',()=>{if(window.matchMedia('(min-width:581px)').matches)close()})})();</script>
-  <script src="assets/yumecore-effects.js?v=1" defer></script>
+<script>(()=>{const b=document.querySelector('.menu'),n=document.querySelector('#nav'),h=document.querySelector('header');if(!b||!n||!h)return;const isOpen=()=>b.getAttribute('aria-expanded')==='true';const close=({restoreFocus=false}={})=>{b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');n.classList.remove('open');if(restoreFocus)b.focus()};b.addEventListener('click',()=>{const nextOpen=!isOpen();b.setAttribute('aria-expanded',String(nextOpen));b.setAttribute('aria-label',nextOpen?'Cerrar menú':'Abrir menú');n.classList.toggle('open',nextOpen)});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>close()));document.addEventListener('pointerdown',e=>{if(isOpen()&&!h.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen())close({restoreFocus:true})});window.addEventListener('resize',()=>{if(window.matchMedia('(min-width:581px)').matches)close()},{passive:true});})();</script>
+  <script src="assets/yumecore-effects.js?v=2" defer></script>
 </body>
 </html>
