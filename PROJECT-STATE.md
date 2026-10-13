@@ -1,14 +1,8 @@
 # YumeCore Web — Estado del proyecto
 
-Última actualización: 2026-10-12
+Última actualización: **2026-10-12 22:15 America/Santiago (UTC-03:00)**
 
 Este archivo mantiene el contexto operativo del sitio público para que otro desarrollador o una nueva sesión pueda continuar sin reconstruir todo el historial.
-
-## Registro de continuidad
-
-- `PROJECT-HISTORY.md` contiene el historial de implementaciones, cambios, errores, correcciones, elementos retirados y decisiones de continuidad.
-- Antes de continuar una tarea, revisar este archivo, `PROJECT-HISTORY.md` y el estado de CI.
-- Después de una modificación relevante, actualizar el estado y el historial con el resultado real de la verificación.
 
 ## Estado actual
 
@@ -18,6 +12,7 @@ Este archivo mantiene el contexto operativo del sitio público para que otro des
 - Workflow principal: `.github/workflows/pages.yml`.
 - Sitio público: `https://inochinoyume.github.io/yumecore-web/`.
 - Invitación oficial: `https://discord.gg/7QTeThJvrV`.
+- Estado público de la invitación: **oficial, activa y permanente**.
 - Política pública de retención: 90 días.
 
 ## Implementado
@@ -33,12 +28,15 @@ Este archivo mantiene el contexto operativo del sitio público para que otro des
 - Validación automática de HTML, títulos, `h1`, `alt`, enlaces locales, anclas y recursos requeridos.
 - Publicación automática mediante GitHub Pages.
 - Configuración pública compartida en `site-config.js`.
+- Estado público de la invitación centralizado en `site-config.js`.
 
 ## Invitación oficial
 
 La URL canónica es:
 
 `https://discord.gg/7QTeThJvrV`
+
+Estado: **invitación oficial, activa y permanente**.
 
 Debe permanecer igual en:
 
@@ -55,41 +53,20 @@ No sustituirla por una invitación nueva salvo que el propietario proporcione y 
 
 La política pública actual es de 90 días para tickets cerrados. El valor público se mantiene en `site-config.js` y debe coincidir con `TICKET_RETENTION_DAYS=90` del bot.
 
-## Errores encontrados y resolución
+## Última verificación CI
 
-### CI de la web: enlace a tutorial inexistente
-
-El workflow falló en el commit que añadió `features.html` porque el validador detectó:
-
-`features.html: enlace/recurso local roto: tutorial.html`
-
-El problema era de orden de publicación: `features.html` ya enlazaba al tutorial, pero `tutorial.html` todavía no existía en ese commit.
-
-Después se añadió `tutorial.html` y se mantuvo la comprobación de enlaces locales. El fallo histórico se conserva como contexto en `PROJECT-HISTORY.md`; el estado actual debe comprobarse en la ejecución más reciente de Actions.
-
-## Cambios recientes
-
-- Se alinearon las páginas públicas con la política de retención de 90 días.
-- Se publicó la invitación permanente oficial en la página de soporte.
-- Se hizo que `support.html` tome la URL canónica desde `site-config.js`, manteniendo un fallback visible en HTML.
-- README actualizado con enlaces oficiales, política actual y continuidad del proyecto.
-- Se añadió `PROJECT-HISTORY.md` para conservar el historial de trabajo y facilitar la continuidad.
-
-## Elementos retirados o que no deben volver
-
-- Invitaciones de soporte no verificadas o antiguas.
-- Información privada del bot, secretos, tokens o credenciales.
-- Afirmaciones públicas que contradigan la retención o el aislamiento real del backend.
-- Enlaces locales a páginas que no existan en el mismo commit.
+- **Deploy YumeCore website #62**.
+- Run: `38331227711`.
+- Commit verificado: `d529f10ee72d88fd614e0dfddb87d1ac08d5b2a7`.
+- Resultado: **SUCCESS**.
+- Fecha/hora: **2026-10-12 22:15:06 America/Santiago**.
 
 ## Próximo punto de continuación
 
-1. Confirmar CI verde después de los últimos cambios.
-2. Revisar todas las páginas buscando URLs de soporte inconsistentes.
-3. Revisar enlaces locales y sitemap después de cualquier nueva página.
-4. Mantener sincronizados invitación, retención y descripción de funciones con el bot.
-5. Hacer una revisión visual final en GitHub Pages después del despliegue.
-6. Si se modifica el bot, actualizar este estado cuando cambie el comportamiento público.
+1. Mantener sincronizada la invitación entre bot y web.
+2. Confirmar CI verde después de los commits de historial/estado posteriores a esta actualización.
+3. Revisar visualmente GitHub Pages tras el despliegue más reciente.
+4. Si se modifica el comportamiento del bot, actualizar este estado y `PROJECT-HISTORY.md`.
 
 ## Regla de continuidad
 
