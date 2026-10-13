@@ -10,6 +10,7 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - **Página de soporte:** https://inochinoyume.github.io/yumecore-web/support.html
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
+- **Créditos:** https://inochinoyume.github.io/yumecore-web/credits.html
 
 > El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. Es la invitación oficial, activa y permanente del proyecto. La misma URL debe mantenerse en `site-config.js`, la página de soporte, la bienvenida del bot y `SUPPORT_SERVER_URL` del bot.
 
@@ -47,7 +48,8 @@ Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes es
 - Retención automática según la política actual de 90 días.
 - Eliminación aislada de los datos de una guild cuando el bot es expulsado; las guilds temporalmente no disponibles conservan sus datos.
 - Developers/gestores por guild administrados desde Discord, sin IDs de configuración en `.env`.
-- Programa Beta con diagnóstico, pruebas de configuración y feedback; avatar y banner globales reservados al propietario del bot.
+- Programa Beta con diagnóstico, pruebas de configuración y feedback; la consulta pública `/beta tester lista` muestra los integrantes del programa Beta Tester.
+- Avatar y banner globales reservados al propietario del bot.
 - Automatización, anti-spam, backups, diagnóstico y auditoría.
 
 ## Estructura
@@ -58,6 +60,7 @@ Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes es
 - `tutorial.html`: guía pública de configuración y puesta en marcha.
 - `terms.html`: términos de servicio.
 - `privacy.html`: política de privacidad.
+- `credits.html`: créditos oficiales de Developer Team YumeCore.
 - `site-config.js`: valores públicos compartidos, incluida la invitación canónica, su estado público y la política de retención.
 - `.github/workflows/pages.yml`: validación y publicación mediante GitHub Pages.
 
