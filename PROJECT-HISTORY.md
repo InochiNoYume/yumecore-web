@@ -4,28 +4,26 @@ Este registro resume decisiones, implementaciones, correcciones, elementos retir
 
 ## 2026-10-12/13 — Invitación oficial y sincronización pública
 
-### 22:15 (America/Santiago / UTC-03:00)
+### Estado actual
 
-- Confirmada y mantenida como invitación canónica: `https://discord.gg/7QTeThJvrV`.
-- `site-config.js` ahora expone el estado público `Invitación oficial, activa y permanente`.
-- `support.html` muestra el estado de la invitación desde la configuración pública y usa la misma URL canónica.
-- README actualizado para indicar que la invitación es oficial, activa y permanente.
-- Se mantiene la regla de no sustituir la invitación sin confirmación explícita del propietario.
+- Invitación canónica: `https://discord.gg/7QTeThJvrV`.
+- Estado público: **oficial, activa y permanente**.
+- `site-config.js` expone la misma URL y el estado permanente.
+- `support.html` muestra el mismo enlace y estado.
+- La portada y el README utilizan la misma invitación.
+- El bot `.env.example`, README y bienvenida validada usan exactamente la misma URL.
+- No se sustituirá esta invitación por otra sin confirmación explícita del propietario.
 
 ### CI
 
-- **2026-10-12 22:15:06 America/Santiago / 2026-10-13 01:15:06 UTC** — commit `d529f10ee72d88fd614e0dfddb87d1ac08d5b2a7`.
-- **Deploy YumeCore website #62 / run `38331227711` — SUCCESS**.
-- Resultado: validación y publicación del sitio completadas correctamente.
+- Deploy YumeCore website #62 / run `38331227711` — **SUCCESS**.
+- La publicación correspondiente quedó validada correctamente.
 
 Referencia: https://github.com/InochiNoYume/yumecore-web/actions/runs/38331227711
 
-## Historial anterior
+## Sincronización con el bot
 
-- El sitio público mantiene `site-config.js` como referencia de valores compartidos.
-- La retención pública continúa alineada en 90 días.
-- Las pull requests se validan sin publicar y los cambios aceptados en `main` pueden desplegarse.
-- Los fallos históricos del validador de enlaces locales quedan documentados y no deben eliminarse del contexto.
+El sitio queda alineado con el contrato público actual del bot: soporte oficial mediante la invitación permanente, sin introducir secretos ni valores privados. La retención pública continúa alineada en 90 días.
 
 ## Decisiones que no deben revertirse accidentalmente
 
