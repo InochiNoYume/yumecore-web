@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0913">
-  <meta name="description" content="Servidor oficial de soporte de YumeCore. Invitación permanente para recibir ayuda y consultar el proyecto.">
+  <meta name="description" content="Servidor oficial de soporte de YumeCore. Invitación oficial, activa y permanente para recibir ayuda y consultar el proyecto.">
   <link rel="canonical" href="https://inochinoyume.github.io/yumecore-web/support.html">
   <title>Soporte oficial — YumeCore</title>
   <style>
@@ -16,8 +16,8 @@
   <main class="card">
     <span class="eyebrow">YumeCore · Beyond Support</span>
     <h1>Soporte oficial.</h1>
-    <p>Este es el servidor oficial de soporte de YumeCore. La invitación mostrada aquí es la invitación permanente y canónica del proyecto, la misma que debe utilizar el bot en sus mensajes de bienvenida.</p>
-    <div><span class="invite" id="support-invite" aria-label="Invitación oficial de soporte">https://discord.gg/7QTeThJvrV</span><span class="badge" id="invite-status">Invitación permanente</span></div>
+    <p>Este es el servidor oficial de soporte de YumeCore. La invitación mostrada aquí es la invitación oficial, activa y permanente del proyecto, y es la misma que utiliza el bot en sus mensajes de bienvenida.</p>
+    <div><span class="invite" id="support-invite" aria-label="Invitación oficial de soporte">https://discord.gg/7QTeThJvrV</span><span class="badge" id="invite-status">Invitación oficial, activa y permanente</span></div>
     <div class="actions">
       <a class="btn primary" id="support-invite-link" href="https://discord.gg/7QTeThJvrV" target="_blank" rel="noopener noreferrer">Entrar al servidor de soporte ↗</a>
       <a class="btn" href="index.html">Volver al sitio</a>
@@ -35,7 +35,7 @@
       const status = document.getElementById("invite-status");
       if (invite) invite.textContent = url;
       if (link) link.href = url;
-      if (status) status.textContent = site.supportInvitePermanent ? "Invitación permanente" : "Invitación oficial";
+      if (status) status.textContent = site.supportInviteStatus || (site.supportInvitePermanent ? "Invitación permanente" : "Invitación oficial");
     })();
   </script>
 </body>
