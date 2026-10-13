@@ -93,6 +93,6 @@ Este sitio es público. Solo debe contener información que pueda publicarse de 
 ### Verificación
 
 - La última ejecución de la rama `main` antes de estos cambios fue Deploy YumeCore website #64, run `38344102428`, **SUCCESS**.
-- Los cambios actuales están en una rama aparte; todavía requieren ejecutar el workflow con una PR para confirmar la validación del último HEAD.
-- No se ha publicado la rama de auditoría a GitHub Pages ni se ha modificado `main`.
+- Workflow de la PR #4: run `38350032168` — **SUCCESS** en el commit `46a7a0b4dc37078a52e149475fe1c9c9e5118694`. La validación estática pasó; el job de deploy fue omitido correctamente al ser una PR.
+- No se ha publicado la rama de auditoría a GitHub Pages ni se ha modificado `main`; la PR #4 sigue abierta en borrador.
 - La comprobación directa de las páginas publicadas no estuvo disponible mediante el lector web en esta sesión; los hallazgos de navegación se basan en el HTML fuente y el workflow del repositorio.
