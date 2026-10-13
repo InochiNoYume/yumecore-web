@@ -6,12 +6,12 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 
 - **Sitio web:** https://inochinoyume.github.io/yumecore-web/
 - **Añadir el bot:** https://discord.com/oauth2/authorize?client_id=1549554629853843596
-- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación activa y permanente.
+- **Servidor oficial de soporte:** https://discord.gg/7QTeThJvrV — invitación oficial, activa y permanente.
 - **Página de soporte:** https://inochinoyume.github.io/yumecore-web/support.html
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
-> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL debe mantenerse en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. Es la invitación oficial, activa y permanente del proyecto. La misma URL debe mantenerse en `site-config.js`, la página de soporte, la bienvenida del bot y `SUPPORT_SERVER_URL` del bot.
 
 ## Configuración global y por guild
 
@@ -58,7 +58,7 @@ Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes es
 - `tutorial.html`: guía pública de configuración y puesta en marcha.
 - `terms.html`: términos de servicio.
 - `privacy.html`: política de privacidad.
-- `site-config.js`: valores públicos compartidos, incluida la invitación canónica y la política de retención.
+- `site-config.js`: valores públicos compartidos, incluida la invitación canónica, su estado público y la política de retención.
 - `.github/workflows/pages.yml`: validación y publicación mediante GitHub Pages.
 
 ## Publicación y CI
