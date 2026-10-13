@@ -11,7 +11,21 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 - **Términos de servicio:** https://inochinoyume.github.io/yumecore-web/terms.html
 - **Política de privacidad:** https://inochinoyume.github.io/yumecore-web/privacy.html
 
-> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL se usa en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
+> El enlace canónico de soporte es `https://discord.gg/7QTeThJvrV`. La misma URL debe mantenerse en `site-config.js`, la página de soporte y `SUPPORT_SERVER_URL` del bot.
+
+## Configuración global y por guild
+
+YumeCore separa la configuración del proyecto de la configuración propia de cada comunidad.
+
+### Global — gestionado por el propietario de YumeCore
+
+Los valores globales del bot se mantienen en el entorno privado de la aplicación. Aquí entran los textos globales de bienvenida, términos, privacidad, créditos y tutorial, además de credenciales y otros valores operativos. Estos textos no los modifica el owner de una guild.
+
+### Por guild — gestionado desde Discord
+
+Cada owner/administrador de una guild configura desde Discord sus paneles, categorías, formularios, preguntas, mensajes de tickets, mensajes de apertura/cierre, mensajes operativos enviados durante la atención de tickets, permisos, roles, canales, prioridades, automatización, apariencia y demás opciones de su comunidad.
+
+Esta configuración se almacena de forma aislada por `guild_id`. Los mensajes específicos de tickets y de Staff no se guardan en el `.env` global.
 
 ## Política pública actual
 
@@ -23,8 +37,9 @@ Sitio público de presentación de YumeCore, una herramienta independiente para 
 ## Funciones destacadas
 
 - Paneles y categorías completamente definidos por cada servidor.
-- Formularios sin campos predeterminados: el propietario configura las preguntas y una categoría sin formulario no abre tickets.
-- Mensajes de apertura y apariencia del panel configurables por guild.
+- Formularios configurados por cada guild.
+- Mensajes de apertura, cierre, Staff y demás contenido operativo configurables por guild desde Discord.
+- Bienvenida, términos, privacidad, créditos y tutorial globales administrados por el propietario del bot.
 - Menús desplegables para las acciones persistentes del ticket.
 - Reclamar/liberar, transferir, prioridad, estado, participantes, bloqueo, notas, información e historial.
 - Cierre que genera el transcript y elimina inmediatamente el canal. No hay archivado ni reapertura.
